@@ -56,7 +56,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
-  margin-bottom: 26px;
+  margin-bottom: 22px;
 }
 
 .pill {
@@ -91,41 +91,42 @@
   border-color: var(--accent);
 }
 
+/* Compact, reference-style headline — sits in the lower-left, fits one screen */
 .hero__title {
-  font-size: var(--fs-display);
-  margin-bottom: 28px;
+  font-size: clamp(2rem, 3.8vw, 3.6rem);
+  margin-bottom: 22px;
 }
 
 .hero__lead {
-  max-width: 46ch;
-  font-size: clamp(1rem, 1.4vw, 1.18rem);
-  line-height: 1.55;
+  max-width: 42ch;
+  font-size: clamp(0.95rem, 1.1vw, 1.05rem);
+  line-height: 1.5;
   color: var(--text);
-  margin-bottom: 32px;
+  margin-bottom: 26px;
 }
 
 .hero__actions {
   display: flex;
   flex-wrap: wrap;
-  gap: 14px;
-  margin-bottom: 44px;
+  gap: 12px;
+  margin-bottom: 32px;
 }
 
 .hero__stats {
   display: flex;
   flex-wrap: wrap;
-  gap: clamp(24px, 5vw, 56px);
+  gap: clamp(20px, 4vw, 44px);
   list-style: none;
 }
 .hero__stats li {
   display: flex;
   flex-direction: column;
-  gap: 4px;
+  gap: 3px;
 }
 .hero__stats b {
   font-family: var(--font-display);
   font-weight: 600;
-  font-size: 2rem;
+  font-size: 1.6rem;
   line-height: 1;
   color: var(--accent);
 }
