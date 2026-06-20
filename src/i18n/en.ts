@@ -18,7 +18,7 @@ export const en = {
   hero: {
     pillCalendar: "Booking calendar",
     pillAi: "AI agent 24/7",
-    titleLines: ["Bodybuilder", "Competing", "Athlete", "Coach"],
+    titleLines: ["Bodybuilder", "Athlete", "Coach"],
     lead: "Personal training, a signature methodology and full nutrition support. I help you get in shape and step on stage — from your first rep to a competition result.",
     ctaPrimary: "Book a session",
     ctaSecondary: "View programs",

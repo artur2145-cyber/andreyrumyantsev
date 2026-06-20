@@ -46,7 +46,7 @@ export function Hero() {
 
         <AnimatedHeading
           lines={t.hero.titleLines}
-          accentIndices={[1, 3]}
+          accentIndices={[1]}
           delay={0.25}
           className="hero__title"
         />

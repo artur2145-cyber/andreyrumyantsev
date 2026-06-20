@@ -18,7 +18,7 @@ export const et = {
   hero: {
     pillCalendar: "Broneeringukalender",
     pillAi: "AI-agent 24/7",
-    titleLines: ["Kulturist", "Võistlev", "Sportlane", "Treener"],
+    titleLines: ["Kulturist", "Sportlane", "Treener"],
     lead: "Personaaltreeningud, autorimetoodika ja toitumise tugi. Aitan sind vormi saada ja lavale jõuda — esimesest kordusest võistlustulemuseni.",
     ctaPrimary: "Broneeri treening",
     ctaSecondary: "Vaata programme",
