@@ -1,0 +1,49 @@
+.logo {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+}
+
+.logo__mark {
+  position: relative;
+  display: inline-flex;
+  font-family: var(--font-display);
+  font-weight: 700;
+  font-size: 1.7rem;
+  letter-spacing: -0.06em;
+  line-height: 1;
+  color: var(--heading);
+}
+
+.logo__mask {
+  display: inline-block;
+  overflow: hidden;
+  padding-block: 0.06em;
+}
+
+.logo__char {
+  display: inline-block;
+  transition: color 0.3s var(--ease-out);
+}
+.logo__char.is-accent {
+  color: var(--accent);
+  margin-left: -0.07em; /* tuck the U under the R like a monogram */
+}
+
+.logo__dot {
+  align-self: flex-end;
+  width: 6px;
+  height: 6px;
+  margin-left: 3px;
+  margin-bottom: 5px;
+  border-radius: 50%;
+  background: var(--accent);
+  transform-origin: center;
+}
+
+.logo:hover .logo__char {
+  color: var(--text-strong);
+}
+.logo:hover .logo__char.is-accent {
+  color: var(--accent-bright);
+}

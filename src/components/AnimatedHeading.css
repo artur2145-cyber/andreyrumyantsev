@@ -1,0 +1,26 @@
+.anim-heading {
+  font-family: var(--font-display);
+  font-weight: 700;
+  text-transform: uppercase;
+  line-height: 0.9;
+  letter-spacing: -0.02em;
+  color: var(--heading);
+  margin: 0;
+}
+
+.anim-heading__mask {
+  display: block;
+  overflow: hidden;
+  /* small breathing room so descenders/skew aren't clipped */
+  padding-block: 0.02em;
+}
+
+.anim-heading__line {
+  display: block;
+  transform-origin: left bottom;
+  will-change: transform;
+}
+
+.anim-heading__line.is-accent {
+  color: var(--accent);
+}

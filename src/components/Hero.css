@@ -1,0 +1,187 @@
+.hero {
+  position: relative;
+  min-height: 100svh;
+  display: flex;
+  align-items: flex-end;
+  padding-top: calc(var(--nav-h) + 20px);
+  padding-bottom: clamp(40px, 7vh, 88px);
+  overflow: hidden;
+}
+
+/* ---- Media (video on the right, faded into the dark on the left) -------- */
+.hero__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero__video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 70% center;
+}
+
+/* Dark scrim: heavy on the left for legibility, transparent toward the video */
+.hero__scrim {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(95deg, var(--bg) 14%, rgba(11, 10, 9, 0.78) 38%, rgba(11, 10, 9, 0.12) 66%, rgba(11, 10, 9, 0.5) 100%),
+    linear-gradient(0deg, var(--bg) 2%, transparent 30%),
+    linear-gradient(180deg, rgba(11, 10, 9, 0.6) 0%, transparent 22%);
+}
+
+.hero__grain {
+  position: absolute;
+  inset: 0;
+  opacity: 0.06;
+  mix-blend-mode: overlay;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ---- Content ------------------------------------------------------------ */
+.hero__content {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.hero__pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 26px;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 16px;
+  border-radius: var(--r-pill);
+  background: var(--surface-pill);
+  backdrop-filter: blur(8px);
+  border: 1px solid var(--line-strong);
+  color: var(--text-strong);
+  font-size: 0.8rem;
+  font-weight: 500;
+  letter-spacing: 0.01em;
+  transition:
+    transform 0.3s var(--ease-out),
+    border-color 0.3s var(--ease-out),
+    background 0.3s var(--ease-out);
+}
+.pill svg {
+  color: var(--text);
+}
+.pill:hover {
+  transform: translateY(-2px);
+  border-color: var(--line-strong);
+}
+.pill--accent svg {
+  color: var(--accent);
+}
+.pill--accent:hover {
+  border-color: var(--accent);
+}
+
+.hero__title {
+  font-size: var(--fs-display);
+  margin-bottom: 28px;
+}
+
+.hero__lead {
+  max-width: 46ch;
+  font-size: clamp(1rem, 1.4vw, 1.18rem);
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: 32px;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 44px;
+}
+
+.hero__stats {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(24px, 5vw, 56px);
+  list-style: none;
+}
+.hero__stats li {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.hero__stats b {
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 2rem;
+  line-height: 1;
+  color: var(--accent);
+}
+.hero__stats span {
+  font-size: 0.82rem;
+  color: var(--text-dim);
+  max-width: 16ch;
+}
+
+/* ---- Scroll cue --------------------------------------------------------- */
+.hero__scroll {
+  position: absolute;
+  right: var(--gutter);
+  bottom: clamp(40px, 7vh, 88px);
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  writing-mode: vertical-rl;
+  font-size: 0.72rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-dim);
+}
+.hero__scroll-line {
+  display: block;
+  width: 1px;
+  height: 56px;
+  background: linear-gradient(var(--accent), transparent);
+}
+
+/* ---- Responsive --------------------------------------------------------- */
+@media (max-width: 810px) {
+  .hero__video {
+    object-position: 64% center;
+  }
+  .hero__scrim {
+    background:
+      linear-gradient(180deg, rgba(11, 10, 9, 0.45) 0%, rgba(11, 10, 9, 0.35) 40%, var(--bg) 96%),
+      linear-gradient(90deg, rgba(11, 10, 9, 0.85) 0%, rgba(11, 10, 9, 0.35) 70%);
+  }
+  .hero__lead {
+    max-width: 100%;
+  }
+  .hero__scroll {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero__stats b {
+    font-size: 1.6rem;
+  }
+  .hero__actions .btn {
+    flex: 1;
+    min-width: 0;
+  }
+}

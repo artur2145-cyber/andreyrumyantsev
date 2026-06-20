@@ -1,0 +1,56 @@
+.lang {
+  display: inline-flex;
+  align-items: center;
+  gap: 2px;
+  padding: 4px;
+  border-radius: var(--r-pill);
+  border: 1px solid var(--line-strong);
+  background: rgba(20, 18, 16, 0.5);
+  backdrop-filter: blur(8px);
+}
+
+.lang__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 6px 12px;
+  border-radius: var(--r-pill);
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  color: var(--text-faint);
+  transition: color 0.25s var(--ease-out);
+}
+
+.lang__btn:hover {
+  color: var(--text);
+}
+
+.lang__btn.is-active {
+  color: var(--text-strong);
+}
+
+.lang__pill {
+  position: absolute;
+  inset: 0;
+  border-radius: var(--r-pill);
+  background: var(--accent);
+  z-index: 0;
+}
+
+.lang__label {
+  position: relative;
+  z-index: 1;
+}
+
+.lang--compact {
+  width: 100%;
+  justify-content: space-between;
+}
+.lang--compact .lang__btn {
+  flex: 1;
+  padding-block: 11px;
+  font-size: 0.82rem;
+}
