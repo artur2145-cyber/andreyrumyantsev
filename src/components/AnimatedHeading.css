@@ -11,8 +11,10 @@
 .anim-heading__mask {
   display: block;
   overflow: hidden;
-  /* small breathing room so descenders/skew aren't clipped */
-  padding-block: 0.02em;
+  /* room at the top so diacritics (e.g. the breve on Й) aren't clipped,
+     and a touch at the bottom for the skew during the reveal */
+  padding-top: 0.18em;
+  padding-bottom: 0.04em;
 }
 
 .anim-heading__line {
